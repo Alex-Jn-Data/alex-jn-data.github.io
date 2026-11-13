@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Python으로 데이터를 읽고 질문을 발견하는 주니어 데이터 분석가 Alex의 포트폴리오">
+  <title>Alex — Data, with curiosity.</title>
+  <style>
+    :root{--paper:#f7f7f2;--ink:#171914;--muted:#70736b;--line:#dedfd7;--lime:#d8f36a;--orange:#ff895c;--sky:#b9e8ed;--yellow:#f5d86a;--green:#b8d8a2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 44px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:-.05em;font-size:1.2rem}.navlinks{display:flex;gap:24px;font-size:.88rem;color:var(--muted)}.navlinks a:hover{color:var(--ink)}
+    .eyebrow{font-size:.76rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(3.2rem,9vw,7.5rem);line-height:.98;letter-spacing:-.085em;margin:24px 0}h2{font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.06;letter-spacing:-.065em;margin:14px 0 24px}h3{font-size:1.35rem;letter-spacing:-.04em;margin-bottom:8px}.hero{min-height:680px;display:flex;flex-direction:column;justify-content:center;padding:90px 0 110px}.hero h1 span{display:block}.hero h1 .accent{color:#61802a}.lead{max-width:600px;color:#55594f;font-size:clamp(1.05rem,2vw,1.3rem)}.hero-bottom{display:flex;align-items:center;gap:14px;margin-top:42px}.pill{border:1px solid var(--ink);border-radius:99px;padding:11px 18px;font-size:.9rem;font-weight:650}.pill.dark{background:var(--ink);color:white}.scrollhint{font-size:.82rem;color:var(--muted);margin-left:6px}
+    section{padding:110px 0;border-top:1px solid var(--line)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}.intro-grid p{max-width:460px;color:var(--muted);font-size:1.08rem}.statement{font-size:clamp(1.7rem,4vw,3.3rem);line-height:1.2;letter-spacing:-.055em;max-width:850px}.statement em{font-style:normal;color:#65822c}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px}.card{min-height:250px;border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}.card:nth-child(1){background:var(--lime)}.card:nth-child(2){background:var(--sky)}.card:nth-child(3){background:#ffd0bd}.num{font-size:.8rem;font-weight:800;opacity:.65}.card p{font-size:.95rem;margin:0;max-width:260px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.skill{padding:10px 15px;border:1px solid var(--line);border-radius:99px;font-size:.92rem;background:#fff9}
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:42px}.feature-main{background:#20251e;color:#f8f8f0;border-radius:26px;padding:34px;min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.feature-main p{color:#c8cec0;max-width:430px}.feature-side{display:grid;gap:18px}.mini{border-radius:24px;padding:26px;background:var(--yellow)}.mini:last-child{background:var(--green)}.mini p{margin:0;color:#4d5147;font-size:.94rem}
+    .closing{background:var(--ink);color:#f7f7f2;border-radius:30px;padding:clamp(30px,6vw,68px);margin:80px 0}.closing .eyebrow{color:#b8c0ad}.closing h2{max-width:700px}.closing p{color:#c5cabe;max-width:520px}.closing a{display:inline-block;border-radius:99px;background:var(--lime);color:var(--ink);padding:12px 19px;font-weight:750;margin-top:10px}
+    footer{padding:26px 0 42px;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:15px}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}.delay{transition-delay:.12s}
+    @media(max-width:700px){.wrap{width:min(100% - 32px,560px)}.nav{height:64px}.navlinks{gap:13px;font-size:.78rem}.hero{min-height:610px;padding:80px 0}.hero-bottom{flex-wrap:wrap}.scrollhint{width:100%;margin:4px 0 0}.intro-grid,.feature{grid-template-columns:1fr;gap:22px}section{padding:78px 0}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:190px}.feature-main{min-height:280px}.closing{margin:54px 0 35px}footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#top">alex<span style="color:#78983a">.</span></a>
+    <nav class="navlinks" aria-label="주요 메뉴"><a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#focus">Focus</a></nav>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div class="eyebrow">Curious mind · Python learner · Data analyst in progress</div>
+      <h1><span>안녕하세요,</span><span class="accent">Alex입니다.</span></h1>
+      <p class="lead">숫자 뒤에 숨은 이야기를 찾습니다. Python으로 데이터를 정리하고, 질문을 만들고, 이해하기 쉬운 인사이트로 연결하는 연습을 하고 있습니다.</p>
+      <div class="hero-bottom"><a class="pill dark" href="#about">저를 더 알아보기 ↘</a><a class="pill" href="#focus">관심 분야 보기</a><span class="scrollhint">천천히 아래로 스크롤해 보세요</span></div>
+    </div>
+
+    <section id="about"><div class="wrap">
+      <div class="intro-grid reveal"><div><div class="eyebrow">01 / About me</div><h2>배우는 속도보다<br>질문의 깊이를.</h2></div><p>데이터 분석 부트캠프에서 약 6개월 동안 기초를 다지고 있습니다. 아직 모든 답을 아는 사람은 아니지만, 문제를 작게 나누고 근거를 확인하며 한 단계씩 해결하는 태도를 중요하게 생각합니다.</p></div>
+      <p class="statement reveal">데이터는 그저 숫자의 모음이 아니라, 더 나은 질문으로 가는 <em>출발점</em>이라고 믿습니다.</p>
+      <div class="cards">
+        <article class="card reveal"><span class="num">01 — LEARN</span><div><h3>기초부터 탄탄하게</h3><p>문법과 통계의 기본기를 익히고, 작은 실습을 반복하며 분석 흐름을 이해합니다.</p></div></article>
+        <article class="card reveal delay"><span class="num">02 — EXPLORE</span><div><h3>직접 만져보기</h3><p>데이터를 불러오고 정리하고 시각화하며, 결과가 말하는 바를 살펴봅니다.</p></div></article>
+        <article class="card reveal"><span class="num">03 — IMPROVE</span><div><h3>설명할 수 있는 분석</h3><p>복잡한 결과도 핵심부터 전달할 수 있도록 기록하고 다듬습니다.</p></div></article>
+      </div>
+    </div></section>
+
+    <section id="toolkit"><div class="wrap">
+      <div class="eyebrow reveal">02 / Toolkit</div><h2 class="reveal">작은 도구들이<br>큰 질문을 만듭니다.</h2>
+      <p class="lead reveal">현재 학습하고 실습하는 도구들입니다. 숙련도를 과장하기보다, 직접 사용하며 경험을 쌓고 있습니다.</p>
+      <div class="skills reveal"><span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">SQL</span><span class="skill">통계 기초</span><span class="skill">Tableau</span><span class="skill">데이터 시각화</span><span class="skill">Git & GitHub</span></div>
+    </div></section>
+
+    <section id="focus"><div class="wrap">
+      <div class="eyebrow reveal">03 / What I’m curious about</div><h2 class="reveal">시간이 쌓이면,<br>패턴이 보일까요?</h2>
+      <div class="feature">
+        <article class="feature-main reveal"><span class="num">FOCUS 01</span><div><h3>주식 데이터 탐색</h3><p>가격과 거래량의 변화를 살펴보고, 숫자에 담긴 흐름을 데이터 관점에서 이해하는 데 관심이 있습니다.</p></div></article>
+        <div class="feature-side"><article class="mini reveal delay"><span class="num">FOCUS 02</span><h3>시계열 분석</h3><p>시간의 순서에 따라 달라지는 데이터에서 추세와 반복되는 패턴을 발견하고 싶습니다.</p></article><article class="mini reveal"><span class="num">FOCUS 03</span><h3>분석의 기록</h3><p>가설부터 전처리, 시각화, 해석까지 과정을 남기며 배운 것을 제 것으로 만듭니다.</p></article></div>
+      </div>
+    </div></section>
+
+    <div class="wrap"><div class="closing reveal"><div class="eyebrow">A little more, every day</div><h2>아직 진행 중이라서<br>더 기대됩니다.</h2><p>배운 내용을 직접 적용하고, 틀린 부분은 고치고, 다음 질문으로 나아갑니다. 이 페이지도 그 과정과 함께 업데이트하겠습니다.</p><a href="https://github.com/Alex-Jn-Data" target="_blank" rel="noopener noreferrer">GitHub에서 작업 보기 ↗</a></div></div>
+  </main>
+  <footer class="wrap"><span>© 2026 Alex · Built with curiosity</span><span>Python · Data · Learning in public</span></footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
