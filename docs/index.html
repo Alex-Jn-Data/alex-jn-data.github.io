@@ -18,14 +18,30 @@
     .closing{background:var(--ink);color:#f7f7f2;border-radius:30px;padding:clamp(30px,6vw,68px);margin:80px 0}.closing .eyebrow{color:#b8c0ad}.closing h2{max-width:700px}.closing p{color:#c5cabe;max-width:520px}.closing a{display:inline-block;border-radius:99px;background:var(--lime);color:var(--ink);padding:12px 19px;font-weight:750;margin-top:10px}
     footer{padding:26px 0 42px;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:15px}
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}.delay{transition-delay:.12s}
-    @media(max-width:700px){.wrap{width:min(100% - 32px,560px)}.nav{height:64px}.navlinks{gap:13px;font-size:.78rem}.hero{min-height:610px;padding:80px 0}.hero-bottom{flex-wrap:wrap}.scrollhint{width:100%;margin:4px 0 0}.intro-grid,.feature{grid-template-columns:1fr;gap:22px}section{padding:78px 0}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:190px}.feature-main{min-height:280px}.closing{margin:54px 0 35px}footer{flex-direction:column}}
+
+.progress-track{position:fixed;z-index:20;top:0;left:0;width:100%;height:3px}.progress-bar{height:100%;width:0;background:var(--orange)}
+.navlinks a.active{color:var(--ink);text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:6px}
+.process{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start;margin-top:48px}.process-steps{display:grid;gap:12px}
+.step{min-height:190px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff8;display:flex;flex-direction:column;justify-content:space-between}
+.step h3{font-size:1.45rem}.step p{margin:0;color:var(--muted);max-width:360px}.step.active{background:var(--lime);border-color:transparent;transform:translateX(7px);transition:background .35s,transform .35s}
+.process-visual{position:sticky;top:105px;min-height:440px;border-radius:26px;background:#20251e;color:#f7f7f2;padding:30px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.process-visual .eyebrow{color:#b8c0ad}.visual-title{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.06em;line-height:1.08;margin:18px 0}.visual-copy{color:#c5cabe;max-width:390px}
+.visual-chart{height:150px;position:relative;border-bottom:1px solid #596052;border-left:1px solid #596052;margin:22px 0 8px}.visual-chart svg{width:100%;height:100%;overflow:visible}
+.visual-chart path{fill:none;stroke:var(--lime);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1s ease}.process-visual.active .visual-chart path{stroke-dashoffset:0}
+.chart-note{font-size:.72rem;color:#aeb5a5}.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
+.topic{padding:26px;border-radius:22px;border:1px solid var(--line);min-height:205px;display:flex;flex-direction:column;justify-content:space-between}
+.topic:nth-child(1){background:#fff}.topic:nth-child(2){background:#e8f2ef}.topic:nth-child(3){background:#fff0e8}.topic:nth-child(4){background:#f0eddf}
+.topic p{color:var(--muted);font-size:.92rem;margin:0;max-width:380px}.topic-tag{font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--muted)}
+@media(max-width:700px){.process{grid-template-columns:1fr;gap:18px}.process-visual{position:relative;top:auto;min-height:330px;order:-1}.step{min-height:150px}.step.active{transform:translateY(-3px)}.topic-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.step.active{transform:none}.visual-chart path{transition:none;stroke-dashoffset:0}}
+\n    @media(max-width:700px){.wrap{width:min(100% - 32px,560px)}.nav{height:64px}.navlinks{gap:13px;font-size:.78rem}.hero{min-height:610px;padding:80px 0}.hero-bottom{flex-wrap:wrap}.scrollhint{width:100%;margin:4px 0 0}.intro-grid,.feature{grid-template-columns:1fr;gap:22px}section{padding:78px 0}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:190px}.feature-main{min-height:280px}.closing{margin:54px 0 35px}footer{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
 <body>
-  <header class="wrap nav">
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>\n  <header class="wrap nav">
     <a class="brand" href="#top">alex<span style="color:#78983a">.</span></a>
-    <nav class="navlinks" aria-label="주요 메뉴"><a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#focus">Focus</a></nav>
+    <nav class="navlinks" aria-label="주요 메뉴"><a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#process">Process</a><a href="#ideas">Ideas</a></nav>
   </header>
   <main id="top">
     <div class="wrap hero">
@@ -52,26 +68,55 @@
     </div></section>
 
     <section id="focus"><div class="wrap">
-      <div class="eyebrow reveal">03 / What I’m curious about</div><h2 class="reveal">시간이 쌓이면,<br>패턴이 보일까요?</h2>
+      <div class="eyebrow reveal">05 / What I’m curious about</div><h2 class="reveal">시간이 쌓이면,<br>패턴이 보일까요?</h2>
       <div class="feature">
         <article class="feature-main reveal"><span class="num">FOCUS 01</span><div><h3>주식 데이터 탐색</h3><p>가격과 거래량의 변화를 살펴보고, 숫자에 담긴 흐름을 데이터 관점에서 이해하는 데 관심이 있습니다.</p></div></article>
         <div class="feature-side"><article class="mini reveal delay"><span class="num">FOCUS 02</span><h3>시계열 분석</h3><p>시간의 순서에 따라 달라지는 데이터에서 추세와 반복되는 패턴을 발견하고 싶습니다.</p></article><article class="mini reveal"><span class="num">FOCUS 03</span><h3>분석의 기록</h3><p>가설부터 전처리, 시각화, 해석까지 과정을 남기며 배운 것을 제 것으로 만듭니다.</p></article></div>
       </div>
     </div></section>
 
-    <div class="wrap"><div class="closing reveal"><div class="eyebrow">A little more, every day</div><h2>아직 진행 중이라서<br>더 기대됩니다.</h2><p>배운 내용을 직접 적용하고, 틀린 부분은 고치고, 다음 질문으로 나아갑니다. 이 페이지도 그 과정과 함께 업데이트하겠습니다.</p><a href="https://github.com/Alex-Jn-Data" target="_blank" rel="noopener noreferrer">GitHub에서 작업 보기 ↗</a></div></div>
+
+    <section id="process"><div class="wrap">
+      <div class="eyebrow reveal">03 / How I work</div><h2 class="reveal">분석은 한 번의 답이 아니라<br>작은 선택의 연결입니다.</h2>
+      <p class="lead reveal">왼쪽 단계를 따라 스크롤하면 오른쪽 설명과 그래프가 단계별로 바뀝니다.</p>
+      <div class="process"><div class="process-steps">
+        <article class="step active reveal" data-step="0"><span class="num">STEP 01</span><div><h3>질문 정하기</h3><p>무엇을 알고 싶은지, 어떤 기준으로 비교할지 정리합니다.</p></div></article>
+        <article class="step reveal" data-step="1"><span class="num">STEP 02</span><div><h3>데이터 살펴보기</h3><p>자료의 구조와 결측치, 이상한 값, 시간 범위를 확인합니다.</p></div></article>
+        <article class="step reveal" data-step="2"><span class="num">STEP 03</span><div><h3>정리하고 탐색하기</h3><p>Python과 SQL로 데이터를 정리하고 통계와 시각화로 패턴을 찾습니다.</p></div></article>
+        <article class="step reveal" data-step="3"><span class="num">STEP 04</span><div><h3>해석하고 기록하기</h3><p>발견한 내용과 한계를 함께 적고 다음 질문을 남깁니다.</p></div></article>
+      </div><aside class="process-visual active" id="processVisual" aria-live="polite">
+        <div><div class="eyebrow" id="visualEyebrow">STEP 01 / FRAME</div><div class="visual-title" id="visualTitle">좋은 분석은<br>좋은 질문에서.</div><p class="visual-copy" id="visualCopy">무엇을 비교하고 어떤 근거가 필요한지 먼저 생각합니다.</p></div>
+        <div><div class="visual-chart"><svg viewBox="0 0 360 150" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C35 105 45 118 72 88 S115 105 145 68 S190 90 218 48 S270 62 300 28 S335 38 360 8"/></svg></div><div class="chart-note">개념을 표현한 장식용 그래프 · 실제 분석 결과가 아닙니다</div></div>
+      </aside></div></div></section>
+    <section id="ideas"><div class="wrap"><div class="eyebrow reveal">04 / Questions I want to explore</div><h2 class="reveal">관심 있는 주제를<br>분석 가능한 질문으로.</h2>
+      <div class="topic-grid">
+        <article class="topic reveal"><span class="topic-tag">MARKET DATA</span><div><h3>가격과 거래량</h3><p>가격 변화와 거래량은 어떤 관계를 보일까요? 구간을 나누어 비교해 보고 싶습니다.</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">TIME SERIES</span><div><h3>시간에 따른 흐름</h3><p>추세와 계절성, 변동성을 구분해 데이터의 움직임을 이해하고 싶습니다.</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">STATISTICS</span><div><h3>숫자의 신뢰도</h3><p>평균만으로 놓치는 정보는 무엇일까요? 분포와 변동성도 함께 살펴봅니다.</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">DATA STORY</span><div><h3>결과를 전달하기</h3><p>차트가 보여주는 사실과 해석을 구분하고 핵심을 명확히 설명하는 연습을 합니다.</p></div></article>
+      </div></div></section>
+\n    <div class="wrap"><div class="closing reveal"><div class="eyebrow">A little more, every day</div><h2>아직 진행 중이라서<br>더 기대됩니다.</h2><p>배운 내용을 직접 적용하고, 틀린 부분은 고치고, 다음 질문으로 나아갑니다. 이 페이지도 그 과정과 함께 업데이트하겠습니다.</p><a href="https://github.com/Alex-Jn-Data" target="_blank" rel="noopener noreferrer">GitHub에서 작업 보기 ↗</a></div></div>
   </main>
   <footer class="wrap"><span>© 2026 Alex · Built with curiosity</span><span>Python · Data · Learning in public</span></footer>
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const progressBar=document.getElementById('progressBar');
+    const steps=[...document.querySelectorAll('.step')], visual=document.getElementById('processVisual');
+    const eyebrow=document.getElementById('visualEyebrow'), title=document.getElementById('visualTitle'), copy=document.getElementById('visualCopy');
+    const content=[
+      ['STEP 01 / FRAME','좋은 분석은<br>좋은 질문에서.','무엇을 비교하고 어떤 근거가 필요한지 먼저 생각합니다.'],
+      ['STEP 02 / CHECK','데이터를 먼저<br>이해합니다.','행과 열, 자료형, 누락된 값과 관측 기간을 확인합니다.'],
+      ['STEP 03 / EXPLORE','작은 탐색으로<br>패턴을 찾습니다.','요약 통계와 시각화로 데이터의 관계와 변화를 살펴봅니다.'],
+      ['STEP 04 / EXPLAIN','결과와 한계를<br>함께 전달합니다.','관찰한 사실과 해석을 구분하고 추가로 확인할 점을 기록합니다.']
+    ];
+    function setStep(i){steps.forEach((s,n)=>s.classList.toggle('active',n===i));eyebrow.textContent=content[i][0];title.innerHTML=content[i][1];copy.textContent=content[i][2];visual.classList.remove('active');requestAnimationFrame(()=>visual.classList.add('active'))}
+    const stepObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)setStep(Number(e.target.dataset.step))}),{rootMargin:'-35% 0px -45% 0px'});
+    steps.forEach(s=>stepObserver.observe(s));
+    const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('.navlinks a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-35% 0px -55% 0px'});
+    document.querySelectorAll('main section[id]').forEach(s=>sectionObserver.observe(s));
+    function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;progressBar.style.width=(max>0?scrollY/max*100:0)+'%'}
+    addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>
