@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f7f2">
-  <meta name="description" content="Python으로 데이터를 읽고 질문을 발견하는 주니어 데이터 분석가 Alex의 포트폴리오">
-  <title>Alex — Data, with curiosity.</title>
+  <meta name="description" content="Alex의 딥러닝·AI 데이터 분석 포트폴리오. 데이터에서 패턴을 찾고 모델로 검증합니다.">
+  <title>Alex — Deep Learning, with purpose.</title>
   <style>
     :root{--paper:#f7f7f2;--ink:#171914;--muted:#70736b;--line:#dedfd7;--lime:#d8f36a;--orange:#ff895c;--sky:#b9e8ed;--yellow:#f5d86a;--green:#b8d8a2}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.6}
@@ -18,95 +18,88 @@
     .closing{background:var(--ink);color:#f7f7f2;border-radius:30px;padding:clamp(30px,6vw,68px);margin:80px 0}.closing .eyebrow{color:#b8c0ad}.closing h2{max-width:700px}.closing p{color:#c5cabe;max-width:520px}.closing a{display:inline-block;border-radius:99px;background:var(--lime);color:var(--ink);padding:12px 19px;font-weight:750;margin-top:10px}
     footer{padding:26px 0 42px;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:15px}
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}.delay{transition-delay:.12s}
-
-.progress-track{position:fixed;z-index:20;top:0;left:0;width:100%;height:3px}.progress-bar{height:100%;width:0;background:var(--orange)}
-.navlinks a.active{color:var(--ink);text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:6px}
-.process{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start;margin-top:48px}.process-steps{display:grid;gap:12px}
-.step{min-height:190px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff8;display:flex;flex-direction:column;justify-content:space-between}
-.step h3{font-size:1.45rem}.step p{margin:0;color:var(--muted);max-width:360px}.step.active{background:var(--lime);border-color:transparent;transform:translateX(7px);transition:background .35s,transform .35s}
-.process-visual{position:sticky;top:105px;min-height:440px;border-radius:26px;background:#20251e;color:#f7f7f2;padding:30px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
-.process-visual .eyebrow{color:#b8c0ad}.visual-title{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.06em;line-height:1.08;margin:18px 0}.visual-copy{color:#c5cabe;max-width:390px}
-.visual-chart{height:150px;position:relative;border-bottom:1px solid #596052;border-left:1px solid #596052;margin:22px 0 8px}.visual-chart svg{width:100%;height:100%;overflow:visible}
-.visual-chart path{fill:none;stroke:var(--lime);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1s ease}.process-visual.active .visual-chart path{stroke-dashoffset:0}
-.chart-note{font-size:.72rem;color:#aeb5a5}.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
-.topic{padding:26px;border-radius:22px;border:1px solid var(--line);min-height:205px;display:flex;flex-direction:column;justify-content:space-between}
-.topic:nth-child(1){background:#fff}.topic:nth-child(2){background:#e8f2ef}.topic:nth-child(3){background:#fff0e8}.topic:nth-child(4){background:#f0eddf}
-.topic p{color:var(--muted);font-size:.92rem;margin:0;max-width:380px}.topic-tag{font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--muted)}
-@media(max-width:700px){.process{grid-template-columns:1fr;gap:18px}.process-visual{position:relative;top:auto;min-height:330px;order:-1}.step{min-height:150px}.step.active{transform:translateY(-3px)}.topic-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.step.active{transform:none}.visual-chart path{transition:none;stroke-dashoffset:0}}
-\n    @media(max-width:700px){.wrap{width:min(100% - 32px,560px)}.nav{height:64px}.navlinks{gap:13px;font-size:.78rem}.hero{min-height:610px;padding:80px 0}.hero-bottom{flex-wrap:wrap}.scrollhint{width:100%;margin:4px 0 0}.intro-grid,.feature{grid-template-columns:1fr;gap:22px}section{padding:78px 0}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:190px}.feature-main{min-height:280px}.closing{margin:54px 0 35px}footer{flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+    .progress-track{position:fixed;z-index:20;top:0;left:0;width:100%;height:3px}.progress-bar{height:100%;width:0;background:var(--orange)}
+    .navlinks a.active{color:var(--ink);text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:6px}
+    .process{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start;margin-top:48px}.process-steps{display:grid;gap:12px}
+    .step{min-height:190px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff8;display:flex;flex-direction:column;justify-content:space-between}
+    .step h3{font-size:1.45rem}.step p{margin:0;color:var(--muted);max-width:360px}.step.active{background:var(--lime);border-color:transparent;transform:translateX(7px);transition:background .35s,transform .35s}
+    .process-visual{position:sticky;top:105px;min-height:440px;border-radius:26px;background:#20251e;color:#f7f7f2;padding:30px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+    .process-visual .eyebrow{color:#b8c0ad}.visual-title{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.06em;line-height:1.08;margin:18px 0}.visual-copy{color:#c5cabe;max-width:390px}
+    .visual-chart{height:150px;position:relative;border-bottom:1px solid #596052;border-left:1px solid #596052;margin:22px 0 8px}.visual-chart svg{width:100%;height:100%;overflow:visible}
+    .visual-chart path{fill:none;stroke:var(--lime);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1s ease}.process-visual.active .visual-chart path{stroke-dashoffset:0}
+    .chart-note{font-size:.72rem;color:#aeb5a5}.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
+    .topic{padding:26px;border-radius:22px;border:1px solid var(--line);min-height:205px;display:flex;flex-direction:column;justify-content:space-between}
+    .topic:nth-child(1){background:#fff}.topic:nth-child(2){background:#e8f2ef}.topic:nth-child(3){background:#fff0e8}.topic:nth-child(4){background:#f0eddf}
+    .topic p{color:var(--muted);font-size:.92rem;margin:0;max-width:380px}.topic-tag{font-size:.72rem;letter-spacing:.1em;font-weight:800;color:var(--muted)}
+    @media(max-width:700px){.wrap{width:min(100% - 32px,560px)}.nav{height:64px}.navlinks{gap:13px;font-size:.78rem}.hero{min-height:610px;padding:80px 0}.hero-bottom{flex-wrap:wrap}.scrollhint{width:100%;margin:4px 0 0}.intro-grid,.feature{grid-template-columns:1fr;gap:22px}section{padding:78px 0}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:190px}.feature-main{min-height:280px}.closing{margin:54px 0 35px}footer{flex-direction:column}.process{grid-template-columns:1fr;gap:18px}.process-visual{position:relative;top:auto;min-height:330px;order:-1}.step{min-height:150px}.step.active{transform:translateY(-3px)}.topic-grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.step.active{transform:none}.visual-chart path{transition:none;stroke-dashoffset:0}}
   </style>
 </head>
 <body>
-  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>\n  <header class="wrap nav">
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+  <header class="wrap nav">
     <a class="brand" href="#top">alex<span style="color:#78983a">.</span></a>
-    <nav class="navlinks" aria-label="주요 메뉴"><a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#process">Process</a><a href="#ideas">Ideas</a></nav>
+    <nav class="navlinks" aria-label="주요 메뉴"><a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#process">Process</a><a href="#ideas">Research</a></nav>
   </header>
   <main id="top">
     <div class="wrap hero">
-      <div class="eyebrow">Curious mind · Python learner · Data analyst in progress</div>
-      <h1><span>안녕하세요,</span><span class="accent">Alex입니다.</span></h1>
-      <p class="lead">숫자 뒤에 숨은 이야기를 찾습니다. Python으로 데이터를 정리하고, 질문을 만들고, 이해하기 쉬운 인사이트로 연결하는 연습을 하고 있습니다.</p>
-      <div class="hero-bottom"><a class="pill dark" href="#about">저를 더 알아보기 ↘</a><a class="pill" href="#focus">관심 분야 보기</a><span class="scrollhint">천천히 아래로 스크롤해 보세요</span></div>
+      <div class="eyebrow">Deep Learning · AI · Data Analysis</div>
+      <h1><span>데이터를 이해하고,</span><span class="accent">모델로 탐구합니다.</span></h1>
+      <p class="lead">안녕하세요, Alex입니다. 데이터의 구조와 맥락을 읽고 딥러닝 모델이 패턴을 학습하는 원리를 탐구합니다. 재현 가능한 실험과 명확한 검증을 통해 문제를 해결하는 AI 데이터 분석가를 지향합니다.</p>
+      <div class="hero-bottom"><a class="pill dark" href="#about">분석 관점 보기 ↘</a><a class="pill" href="#focus">연구 관심 분야</a><span class="scrollhint">Data → Representation → Learning → Evaluation</span></div>
     </div>
-
     <section id="about"><div class="wrap">
-      <div class="intro-grid reveal"><div><div class="eyebrow">01 / About me</div><h2>배우는 속도보다<br>질문의 깊이를.</h2></div><p>데이터 분석 부트캠프에서 약 6개월 동안 기초를 다지고 있습니다. 아직 모든 답을 아는 사람은 아니지만, 문제를 작게 나누고 근거를 확인하며 한 단계씩 해결하는 태도를 중요하게 생각합니다.</p></div>
-      <p class="statement reveal">데이터는 그저 숫자의 모음이 아니라, 더 나은 질문으로 가는 <em>출발점</em>이라고 믿습니다.</p>
+      <div class="intro-grid reveal"><div><div class="eyebrow">01 / About</div><h2>모델보다 먼저<br>문제를 이해합니다.</h2></div><p>좋은 딥러닝은 복잡한 모델을 적용하는 데서 끝나지 않습니다. 문제 정의, 데이터 품질, 적절한 표현 학습, 실험 설계와 평가가 함께 맞물려야 합니다. 저는 이 전체 흐름을 이해하고 설명할 수 있는 분석가를 목표로 합니다.</p></div>
+      <p class="statement reveal">데이터의 신호를 읽고, 모델의 판단을 검증해 <em>신뢰할 수 있는 인사이트</em>로 연결합니다.</p>
       <div class="cards">
-        <article class="card reveal"><span class="num">01 — LEARN</span><div><h3>기초부터 탄탄하게</h3><p>문법과 통계의 기본기를 익히고, 작은 실습을 반복하며 분석 흐름을 이해합니다.</p></div></article>
-        <article class="card reveal delay"><span class="num">02 — EXPLORE</span><div><h3>직접 만져보기</h3><p>데이터를 불러오고 정리하고 시각화하며, 결과가 말하는 바를 살펴봅니다.</p></div></article>
-        <article class="card reveal"><span class="num">03 — IMPROVE</span><div><h3>설명할 수 있는 분석</h3><p>복잡한 결과도 핵심부터 전달할 수 있도록 기록하고 다듬습니다.</p></div></article>
+        <article class="card reveal"><span class="num">01 — UNDERSTAND</span><div><h3>데이터와 문제 정의</h3><p>목표 변수와 입력 특성, 데이터 누수와 편향 가능성을 먼저 확인합니다.</p></div></article>
+        <article class="card reveal delay"><span class="num">02 — LEARN</span><div><h3>표현과 패턴 학습</h3><p>신경망과 임베딩이 데이터의 유용한 표현을 학습하는 방식을 탐구합니다.</p></div></article>
+        <article class="card reveal"><span class="num">03 — VALIDATE</span><div><h3>실험과 검증</h3><p>기준 모델과 평가 지표를 설정하고 결과의 재현성과 한계를 점검합니다.</p></div></article>
       </div>
     </div></section>
-
     <section id="toolkit"><div class="wrap">
-      <div class="eyebrow reveal">02 / Toolkit</div><h2 class="reveal">작은 도구들이<br>큰 질문을 만듭니다.</h2>
-      <p class="lead reveal">현재 학습하고 실습하는 도구들입니다. 숙련도를 과장하기보다, 직접 사용하며 경험을 쌓고 있습니다.</p>
-      <div class="skills reveal"><span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">SQL</span><span class="skill">통계 기초</span><span class="skill">Tableau</span><span class="skill">데이터 시각화</span><span class="skill">Git & GitHub</span></div>
+      <div class="eyebrow reveal">02 / Toolkit</div><h2 class="reveal">기초부터 모델까지,<br>분석의 도구 상자.</h2>
+      <p class="lead reveal">데이터 처리와 통계적 사고를 바탕으로 머신러닝·딥러닝의 핵심 개념과 도구를 익히고 실습합니다.</p>
+      <div class="skills reveal"><span class="skill">Python</span><span class="skill">NumPy</span><span class="skill">Pandas</span><span class="skill">SQL</span><span class="skill">Statistics</span><span class="skill">Machine Learning</span><span class="skill">Neural Networks</span><span class="skill">PyTorch</span><span class="skill">Transformers</span><span class="skill">Embeddings</span><span class="skill">Git & GitHub</span></div>
     </div></section>
-
     <section id="focus"><div class="wrap">
-      <div class="eyebrow reveal">05 / What I’m curious about</div><h2 class="reveal">시간이 쌓이면,<br>패턴이 보일까요?</h2>
+      <div class="eyebrow reveal">03 / Deep Learning Focus</div><h2 class="reveal">복잡한 데이터에서<br>표현을 학습한다는 것.</h2>
       <div class="feature">
-        <article class="feature-main reveal"><span class="num">FOCUS 01</span><div><h3>주식 데이터 탐색</h3><p>가격과 거래량의 변화를 살펴보고, 숫자에 담긴 흐름을 데이터 관점에서 이해하는 데 관심이 있습니다.</p></div></article>
-        <div class="feature-side"><article class="mini reveal delay"><span class="num">FOCUS 02</span><h3>시계열 분석</h3><p>시간의 순서에 따라 달라지는 데이터에서 추세와 반복되는 패턴을 발견하고 싶습니다.</p></article><article class="mini reveal"><span class="num">FOCUS 03</span><h3>분석의 기록</h3><p>가설부터 전처리, 시각화, 해석까지 과정을 남기며 배운 것을 제 것으로 만듭니다.</p></article></div>
+        <article class="feature-main reveal"><span class="num">FOCUS 01</span><div><h3>Transformer & LLM</h3><p>Attention 메커니즘과 토큰 표현, 사전학습·파인튜닝의 흐름을 이해하고 언어 모델이 문맥을 학습하는 방식을 탐구합니다.</p></div></article>
+        <div class="feature-side"><article class="mini reveal delay"><span class="num">FOCUS 02</span><h3>Embeddings & Representation</h3><p>고차원 데이터를 벡터 공간에 표현하고 유사도와 의미 관계를 분석합니다.</p></article><article class="mini reveal"><span class="num">FOCUS 03</span><h3>시계열·금융 데이터</h3><p>시간 순서를 보존한 검증과 예측 문제를 통해 딥러닝의 적용 가능성과 한계를 살펴봅니다.</p></article></div>
       </div>
     </div></section>
-
-
     <section id="process"><div class="wrap">
-      <div class="eyebrow reveal">03 / How I work</div><h2 class="reveal">분석은 한 번의 답이 아니라<br>작은 선택의 연결입니다.</h2>
-      <p class="lead reveal">왼쪽 단계를 따라 스크롤하면 오른쪽 설명과 그래프가 단계별로 바뀝니다.</p>
+      <div class="eyebrow reveal">04 / Experiment Workflow</div><h2 class="reveal">좋은 모델은<br>좋은 실험에서 시작됩니다.</h2>
+      <p class="lead reveal">문제 정의부터 평가까지, 결과를 재현하고 설명할 수 있는 분석 과정을 지향합니다.</p>
       <div class="process"><div class="process-steps">
-        <article class="step active reveal" data-step="0"><span class="num">STEP 01</span><div><h3>질문 정하기</h3><p>무엇을 알고 싶은지, 어떤 기준으로 비교할지 정리합니다.</p></div></article>
-        <article class="step reveal" data-step="1"><span class="num">STEP 02</span><div><h3>데이터 살펴보기</h3><p>자료의 구조와 결측치, 이상한 값, 시간 범위를 확인합니다.</p></div></article>
-        <article class="step reveal" data-step="2"><span class="num">STEP 03</span><div><h3>정리하고 탐색하기</h3><p>Python과 SQL로 데이터를 정리하고 통계와 시각화로 패턴을 찾습니다.</p></div></article>
-        <article class="step reveal" data-step="3"><span class="num">STEP 04</span><div><h3>해석하고 기록하기</h3><p>발견한 내용과 한계를 함께 적고 다음 질문을 남깁니다.</p></div></article>
+        <article class="step active reveal" data-step="0"><span class="num">STEP 01</span><div><h3>문제와 기준 정의</h3><p>예측·분류 목표와 성공 기준, 데이터 분할 방식을 명확히 합니다.</p></div></article>
+        <article class="step reveal" data-step="1"><span class="num">STEP 02</span><div><h3>데이터 검증</h3><p>결측치와 이상치, 클래스 불균형, 누수 및 시간적 편향을 확인합니다.</p></div></article>
+        <article class="step reveal" data-step="2"><span class="num">STEP 03</span><div><h3>모델 학습과 비교</h3><p>기준 모델을 세우고 구조·하이퍼파라미터를 바꾸며 실험합니다.</p></div></article>
+        <article class="step reveal" data-step="3"><span class="num">STEP 04</span><div><h3>평가와 해석</h3><p>적절한 지표와 오류 분석으로 성능, 일반화, 한계를 함께 설명합니다.</p></div></article>
       </div><aside class="process-visual active" id="processVisual" aria-live="polite">
-        <div><div class="eyebrow" id="visualEyebrow">STEP 01 / FRAME</div><div class="visual-title" id="visualTitle">좋은 분석은<br>좋은 질문에서.</div><p class="visual-copy" id="visualCopy">무엇을 비교하고 어떤 근거가 필요한지 먼저 생각합니다.</p></div>
-        <div><div class="visual-chart"><svg viewBox="0 0 360 150" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C35 105 45 118 72 88 S115 105 145 68 S190 90 218 48 S270 62 300 28 S335 38 360 8"/></svg></div><div class="chart-note">개념을 표현한 장식용 그래프 · 실제 분석 결과가 아닙니다</div></div>
+        <div><div class="eyebrow" id="visualEyebrow">STEP 01 / DEFINE</div><div class="visual-title" id="visualTitle">무엇을 풀 것인지<br>먼저 정의합니다.</div><p class="visual-copy" id="visualCopy">목표와 평가 기준이 명확해야 모델의 성능도 의미를 가집니다.</p></div>
+        <div><div class="visual-chart"><svg viewBox="0 0 360 150" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C35 105 45 118 72 88 S115 105 145 68 S190 90 218 48 S270 62 300 28 S335 38 360 8"/></svg></div><div class="chart-note">개념을 표현한 장식용 그래프 · 실제 모델 성능이 아닙니다</div></div>
       </aside></div></div></section>
-    <section id="ideas"><div class="wrap"><div class="eyebrow reveal">04 / Questions I want to explore</div><h2 class="reveal">관심 있는 주제를<br>분석 가능한 질문으로.</h2>
+    <section id="ideas"><div class="wrap"><div class="eyebrow reveal">05 / Research Questions</div><h2 class="reveal">관심을 구체적인<br>연구 질문으로.</h2>
       <div class="topic-grid">
-        <article class="topic reveal"><span class="topic-tag">MARKET DATA</span><div><h3>가격과 거래량</h3><p>가격 변화와 거래량은 어떤 관계를 보일까요? 구간을 나누어 비교해 보고 싶습니다.</p></div></article>
-        <article class="topic reveal"><span class="topic-tag">TIME SERIES</span><div><h3>시간에 따른 흐름</h3><p>추세와 계절성, 변동성을 구분해 데이터의 움직임을 이해하고 싶습니다.</p></div></article>
-        <article class="topic reveal"><span class="topic-tag">STATISTICS</span><div><h3>숫자의 신뢰도</h3><p>평균만으로 놓치는 정보는 무엇일까요? 분포와 변동성도 함께 살펴봅니다.</p></div></article>
-        <article class="topic reveal"><span class="topic-tag">DATA STORY</span><div><h3>결과를 전달하기</h3><p>차트가 보여주는 사실과 해석을 구분하고 핵심을 명확히 설명하는 연습을 합니다.</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">LLM</span><div><h3>언어의 표현 학습</h3><p>토큰과 임베딩은 문맥 정보를 어떻게 표현하며, 모델 크기와 학습 데이터는 결과에 어떤 영향을 줄까요?</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">TIME SERIES</span><div><h3>시계열 예측</h3><p>시간 순서를 고려한 학습·검증은 어떻게 설계해야 하며, 딥러닝은 전통적 방법과 언제 차이를 보일까요?</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">MODEL EVALUATION</span><div><h3>일반화와 신뢰도</h3><p>학습 데이터에서 얻은 성능이 새로운 데이터에서도 유지되는지 어떻게 확인할 수 있을까요?</p></div></article>
+        <article class="topic reveal"><span class="topic-tag">REPRODUCIBLE AI</span><div><h3>재현 가능한 실험</h3><p>데이터 버전, 시드, 하이퍼파라미터와 평가 과정을 기록해 결과를 다시 확인할 수 있게 합니다.</p></div></article>
       </div></div></section>
-\n    <div class="wrap"><div class="closing reveal"><div class="eyebrow">A little more, every day</div><h2>아직 진행 중이라서<br>더 기대됩니다.</h2><p>배운 내용을 직접 적용하고, 틀린 부분은 고치고, 다음 질문으로 나아갑니다. 이 페이지도 그 과정과 함께 업데이트하겠습니다.</p><a href="https://github.com/Alex-Jn-Data" target="_blank" rel="noopener noreferrer">GitHub에서 작업 보기 ↗</a></div></div>
+    <div class="wrap"><div class="closing reveal"><div class="eyebrow">Build · Test · Learn</div><h2>모델의 가능성은<br>검증할 때 의미가 있습니다.</h2><p>딥러닝의 원리를 이해하고, 데이터를 바탕으로 실험하며, 결과를 투명하게 기록합니다. 학습과 프로젝트를 GitHub에 꾸준히 정리합니다.</p><a href="https://github.com/Alex-Jn-Data" target="_blank" rel="noopener noreferrer">GitHub 프로젝트 보기 ↗</a></div></div>
   </main>
-  <footer class="wrap"><span>© 2026 Alex · Built with curiosity</span><span>Python · Data · Learning in public</span></footer>
+  <footer class="wrap"><span>© 2026 Alex · Deep Learning & Data</span><span>Python · AI · Experimentation</span></footer>
   <script>
     const progressBar=document.getElementById('progressBar');
     const steps=[...document.querySelectorAll('.step')], visual=document.getElementById('processVisual');
     const eyebrow=document.getElementById('visualEyebrow'), title=document.getElementById('visualTitle'), copy=document.getElementById('visualCopy');
     const content=[
-      ['STEP 01 / FRAME','좋은 분석은<br>좋은 질문에서.','무엇을 비교하고 어떤 근거가 필요한지 먼저 생각합니다.'],
-      ['STEP 02 / CHECK','데이터를 먼저<br>이해합니다.','행과 열, 자료형, 누락된 값과 관측 기간을 확인합니다.'],
-      ['STEP 03 / EXPLORE','작은 탐색으로<br>패턴을 찾습니다.','요약 통계와 시각화로 데이터의 관계와 변화를 살펴봅니다.'],
-      ['STEP 04 / EXPLAIN','결과와 한계를<br>함께 전달합니다.','관찰한 사실과 해석을 구분하고 추가로 확인할 점을 기록합니다.']
+      ['STEP 01 / DEFINE','무엇을 풀 것인지<br>먼저 정의합니다.','목표와 평가 기준이 명확해야 모델의 성능도 의미를 가집니다.'],
+      ['STEP 02 / VALIDATE','데이터의 품질이<br>학습의 출발점입니다.','분포와 누락값, 누수 가능성을 확인해 학습 데이터의 신뢰도를 점검합니다.'],
+      ['STEP 03 / TRAIN','가설을 세우고<br>모델을 비교합니다.','기준 모델부터 시작해 학습 설정을 바꾸고 실험 결과를 기록합니다.'],
+      ['STEP 04 / EVALUATE','성능뿐 아니라<br>한계도 설명합니다.','새로운 데이터에 대한 일반화와 오류 유형을 살펴 다음 개선 방향을 찾습니다.']
     ];
     function setStep(i){steps.forEach((s,n)=>s.classList.toggle('active',n===i));eyebrow.textContent=content[i][0];title.innerHTML=content[i][1];copy.textContent=content[i][2];visual.classList.remove('active');requestAnimationFrame(()=>visual.classList.add('active'))}
     const stepObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)setStep(Number(e.target.dataset.step))}),{rootMargin:'-35% 0px -45% 0px'});
